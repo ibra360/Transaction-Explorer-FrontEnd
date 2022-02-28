@@ -1,0 +1,837 @@
+[
+  {
+    "block_metadata": {
+      "block_number": 14235516,
+      "block_hash": "0x38b75245eea37feefceacaeff0a5f0589d35e97fc65fbe37703a6ac37f2b3a77",
+      "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+      "parent_hash": "0x3cb83ddd68552faae7dc3403a8d130b4d2e193ada51f28611e7058227cdba966",
+      "miner": "0x829bd824b016326a401d083b33d092293333a830",
+      "gas_limit": 30135653,
+      "gas_used": 8256150,
+      "tx_count": 124,
+      "canonical": "True"
+    },
+    "metadata": {
+      "chain_id": "mainnet",
+      "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+      "block_number": 14235516,
+      "block_hash": "0x38b75245eea37feefceacaeff0a5f0589d35e97fc65fbe37703a6ac37f2b3a77",
+      "timestamp": "2022-02-19 08: 41: 38",
+      "gas_price": 46,
+      "sender": {
+        "address": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+        "name": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+        "badge": "sender"
+      },
+      "receiver": {
+        "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "name": "UniswapV2Router02",
+        "badge": "receiver"
+      },
+      "tx_index": 121,
+      "tx_value": 0,
+      "gas_limit": 168682,
+      "gas_used": 115987,
+      "success": "True"
+    },
+    "events": [
+      {
+        "chain_id": "mainnet",
+        "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+        "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+        "contract": {
+          "address": "0xf293d23bf2cdc05411ca0eddd588eb1977e8dcd4",
+          "name": "SyloToken",
+          "badge": "None"
+        },
+        "index": 193,
+        "call_id": "None",
+        "event_signature": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "event_name": "Transfer",
+        "parameters": [
+          {
+            "name": "from",
+            "type": "address",
+            "value": {
+              "address": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+              "name": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+              "badge": "sender"
+            }
+          },
+          {
+            "name": "to",
+            "type": "address",
+            "value": {
+              "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+              "name": "UniswapV2Pair",
+              "badge": "None"
+            }
+          },
+          {
+            "name": "value",
+            "type": "uint256",
+            "value": 54650.0
+          }
+        ],
+        "event_guessed": "False"
+      },
+      {
+        "chain_id": "mainnet",
+        "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+        "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+        "contract": {
+          "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "name": "WETH9",
+          "badge": "None"
+        },
+        "index": 194,
+        "call_id": "None",
+        "event_signature": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "event_name": "Transfer",
+        "parameters": [
+          {
+            "name": "src",
+            "type": "address",
+            "value": {
+              "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+              "name": "UniswapV2Pair",
+              "badge": "None"
+            }
+          },
+          {
+            "name": "dst",
+            "type": "address",
+            "value": {
+              "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+              "name": "UniswapV2Router02",
+              "badge": "receiver"
+            }
+          },
+          {
+            "name": "wad",
+            "type": "uint256",
+            "value": 0.10033554134718232
+          }
+        ],
+        "event_guessed": "False"
+      },
+      {
+        "chain_id": "mainnet",
+        "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+        "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+        "contract": {
+          "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+          "name": "UniswapV2Pair",
+          "badge": "None"
+        },
+        "index": 195,
+        "call_id": "None",
+        "event_signature": "0x1c411e9a96e071241c2f21f7726b17ae89e3cab4c78be50e062b03a9fffbbad1",
+        "event_name": "Sync",
+        "parameters": [
+          {
+            "name": "reserve0",
+            "type": "uint112",
+            "value": 170180003486562812104
+          },
+          {
+            "name": "reserve1",
+            "type": "uint112",
+            "value": 92468923690759619044931827
+          }
+        ],
+        "event_guessed": "False"
+      },
+      {
+        "chain_id": "mainnet",
+        "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+        "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+        "contract": {
+          "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+          "name": "UniswapV2Pair",
+          "badge": "None"
+        },
+        "index": 196,
+        "call_id": "None",
+        "event_signature": "0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822",
+        "event_name": "Swap",
+        "parameters": [
+          {
+            "name": "sender",
+            "type": "address",
+            "value": {
+              "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+              "name": "UniswapV2Router02",
+              "badge": "receiver"
+            }
+          },
+          {
+            "name": "amount0In",
+            "type": "uint256",
+            "value": 0
+          },
+          {
+            "name": "amount1In",
+            "type": "uint256",
+            "value": 54650000000000000000000
+          },
+          {
+            "name": "amount0Out",
+            "type": "uint256",
+            "value": 100335541347182327
+          },
+          {
+            "name": "amount1Out",
+            "type": "uint256",
+            "value": 0
+          },
+          {
+            "name": "to",
+            "type": "address",
+            "value": {
+              "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+              "name": "UniswapV2Router02",
+              "badge": "receiver"
+            }
+          }
+        ],
+        "event_guessed": "False"
+      },
+      {
+        "chain_id": "mainnet",
+        "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+        "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+        "contract": {
+          "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "name": "WETH9",
+          "badge": "None"
+        },
+        "index": 197,
+        "call_id": "None",
+        "event_signature": "0x7fcf532c15f0a6db0bd6d0e038bea71d30d808c7d98cb3bf7268a95bf5081b65",
+        "event_name": "Withdrawal",
+        "parameters": [
+          {
+            "name": "src",
+            "type": "address",
+            "value": {
+              "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+              "name": "UniswapV2Router02",
+              "badge": "receiver"
+            }
+          },
+          {
+            "name": "wad",
+            "type": "uint256",
+            "value": 0.10033554134718232
+          }
+        ],
+        "event_guessed": "False"
+      }
+    ],
+    "calls": {
+      "chain_id": "mainnet",
+      "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+      "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+      "call_id": "",
+      "call_type": "call",
+      "from_address": {
+        "address": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+        "name": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+        "badge": "sender"
+      },
+      "to_address": {
+        "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+        "name": "UniswapV2Router02",
+        "badge": "receiver"
+      },
+      "value": 0.0,
+      "function_signature": "0x18cbafe5",
+      "function_name": "swapExactTokensForETH",
+      "arguments": [
+        {
+          "name": "amountIn",
+          "type": "uint256",
+          "value": 54650000000000000000000
+        },
+        {
+          "name": "amountOutMin",
+          "type": "uint256",
+          "value": 95389256543389631
+        },
+        {
+          "name": "path",
+          "type": "address[]",
+          "value": [
+            "0xf293d23bf2cdc05411ca0eddd588eb1977e8dcd4",
+            "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+          ]
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "value": {
+            "address": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+            "name": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+            "badge": "sender"
+          }
+        },
+        {
+          "name": "deadline",
+          "type": "uint256",
+          "value": 1645261870
+        }
+      ],
+      "outputs": [
+        {
+          "name": "amounts",
+          "type": "uint256[]",
+          "value": [54650000000000000000000, 100335541347182327]
+        }
+      ],
+      "gas_used": 115615,
+      "error": "None",
+      "status": "True",
+      "indent": 0,
+      "subcalls": [
+        
+        {
+          "chain_id": "mainnet",
+          "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+          "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+          "call_id": "0",
+          "call_type": "staticcall",
+          "from_address": {
+            "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+            "name": "UniswapV2Router02",
+            "badge": "receiver"
+          },
+          "to_address": {
+            "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+            "name": "UniswapV2Pair",
+            "badge": "None"
+          },
+          "value": 0.0,
+          "function_signature": "0x0902f1ac",
+          "function_name": "getReserves",
+          "arguments": [],
+          "outputs": [
+            {
+              "name": "_reserve0",
+              "type": "uint112",
+              "value": 170280339027909994431
+            },
+            {
+              "name": "_reserve1",
+              "type": "uint112",
+              "value": 92414273690759619044931827
+            },
+            {
+              "name": "_blockTimestampLast",
+              "type": "uint32",
+              "value": 1645256154
+            }
+          ],
+          "gas_used": 2504,
+          "error": "None",
+          "status": "True",
+          "indent": 1,
+          "subcalls": [],
+          "function_guessed": "False",
+          "comment": "None"
+        },
+        {
+          "chain_id": "mainnet",
+          "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+          "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+          "call_id": "1",
+          "call_type": "call",
+          "from_address": {
+            "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+            "name": "UniswapV2Router02",
+            "badge": "receiver"
+          },
+          "to_address": {
+            "address": "0xf293d23bf2cdc05411ca0eddd588eb1977e8dcd4",
+            "name": "SyloToken",
+            "badge": "None"
+          },
+          "value": 0.0,
+          "function_signature": "0x23b872dd",
+          "function_name": "transferFrom",
+          "arguments": [
+            {
+              "name": "_from",
+              "type": "address",
+              "value": {
+                "address": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+                "name": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+                "badge": "sender"
+              }
+            },
+            {
+              "name": "_to",
+              "type": "address",
+              "value": {
+                "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+                "name": "UniswapV2Pair",
+                "badge": "None"
+              }
+            },
+            {
+              "name": "_value",
+              "type": "uint256",
+              "value": 54650.0
+            }
+          ],
+          "outputs": [
+            {
+              "name": "success",
+              "type": "bool",
+              "value": "True"
+            }
+          ],
+          "gas_used": 18405,
+          "error": "None",
+          "status": "True",
+          "indent": 1,
+          "subcalls": [],
+          "function_guessed": "False",
+          "comment": "None"
+        },
+        {
+          "chain_id": "mainnet",
+          "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+          "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+          "call_id": "2",
+          "call_type": "call",
+          "from_address": {
+            "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+            "name": "UniswapV2Router02",
+            "badge": "receiver"
+          },
+          "to_address": {
+            "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+            "name": "UniswapV2Pair",
+            "badge": "None"
+          },
+          "value": 0.0,
+          "function_signature": "0x022c0d9f",
+          "function_name": "swap",
+          "arguments": [
+            {
+              "name": "amount0Out",
+              "type": "uint256",
+              "value": 100335541347182327
+            },
+            {
+              "name": "amount1Out",
+              "type": "uint256",
+              "value": 0
+            },
+            {
+              "name": "to",
+              "type": "address",
+              "value": {
+                "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+                "name": "UniswapV2Router02",
+                "badge": "receiver"
+              }
+            },
+            {
+              "name": "data",
+              "type": "bytes",
+              "value": "0x"
+            }
+          ],
+          "outputs": [],
+          "gas_used": 64888,
+          "error": "None",
+          "status": "True",
+          "indent": 1,
+          "subcalls": [
+            {
+              "chain_id": "mainnet",
+              "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+              "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+              "call_id": "2_0000",
+              "call_type": "call",
+              "from_address": {
+                "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+                "name": "UniswapV2Pair",
+                "badge": "None"
+              },
+              "to_address": {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "name": "WETH9",
+                "badge": "None"
+              },
+              "value": 0.0,
+              "function_signature": "0xa9059cbb",
+              "function_name": "transfer",
+              "arguments": [
+                {
+                  "name": "dst",
+                  "type": "address",
+                  "value": {
+                    "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+                    "name": "UniswapV2Router02",
+                    "badge": "receiver"
+                  }
+                },
+                {
+                  "name": "wad",
+                  "type": "uint256",
+                  "value": 0.10033554134718232
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "",
+                  "type": "bool",
+                  "value": "True"
+                }
+              ],
+              "gas_used": 29962,
+              "error": "None",
+              "status": "True",
+              "indent": 2,
+              "subcalls": [],
+              "function_guessed": "False",
+              "comment": "None"
+            },
+            {
+              "chain_id": "mainnet",
+              "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+              "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+              "call_id": "2_0001",
+              "call_type": "staticcall",
+              "from_address": {
+                "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+                "name": "UniswapV2Pair",
+                "badge": "None"
+              },
+              "to_address": {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "name": "WETH9",
+                "badge": "None"
+              },
+              "value": 0.0,
+              "function_signature": "0x70a08231",
+              "function_name": "balanceOf",
+              "arguments": [
+                {
+                  "name": "",
+                  "type": "address",
+                  "value": {
+                    "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+                    "name": "UniswapV2Pair",
+                    "badge": "None"
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "",
+                  "type": "uint256",
+                  "value": 170.1800034865628
+                }
+              ],
+              "gas_used": 534,
+              "error": "None",
+              "status": "True",
+              "indent": 2,
+              "subcalls": [],
+              "function_guessed": "False",
+              "comment": "None"
+            },
+            {
+              "chain_id": "mainnet",
+              "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+              "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+              "call_id": "2_0002",
+              "call_type": "staticcall",
+              "from_address": {
+                "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+                "name": "UniswapV2Pair",
+                "badge": "None"
+              },
+              "to_address": {
+                "address": "0xf293d23bf2cdc05411ca0eddd588eb1977e8dcd4",
+                "name": "SyloToken",
+                "badge": "None"
+              },
+              "value": 0.0,
+              "function_signature": "0x70a08231",
+              "function_name": "balanceOf",
+              "arguments": [
+                {
+                  "name": "_owner",
+                  "type": "address",
+                  "value": {
+                    "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+                    "name": "UniswapV2Pair",
+                    "badge": "None"
+                  }
+                }
+              ],
+              "outputs": [
+                {
+                  "name": "balance",
+                  "type": "uint256",
+                  "value": 92468923.69075961
+                }
+              ],
+              "gas_used": 569,
+              "error": "None",
+              "status": "True",
+              "indent": 2,
+              "subcalls": [],
+              "function_guessed": "False",
+              "comment": "None"
+            }
+          ],
+          "function_guessed": "False",
+          "comment": "None"
+        },
+        {
+          "chain_id": "mainnet",
+          "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+          "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+          "call_id": "3",
+          "call_type": "call",
+          "from_address": {
+            "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+            "name": "UniswapV2Router02",
+            "badge": "receiver"
+          },
+          "to_address": {
+            "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+            "name": "WETH9",
+            "badge": "None"
+          },
+          "value": 0.0,
+          "function_signature": "0x2e1a7d4d",
+          "function_name": "withdraw",
+          "arguments": [
+            {
+              "name": "wad",
+              "type": "uint256",
+              "value": 0.10033554134718232
+            }
+          ],
+          "outputs": [],
+          "gas_used": 9223,
+          "error": "None",
+          "status": "True",
+          "indent": 1,
+          "subcalls": [
+            {
+              "chain_id": "mainnet",
+              "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+              "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+              "call_id": "3_0000",
+              "call_type": "call",
+              "from_address": {
+                "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+                "name": "WETH9",
+                "badge": "None"
+              },
+              "to_address": {
+                "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+                "name": "UniswapV2Router02",
+                "badge": "receiver"
+              },
+              "value": 0.10033554134718232,
+              "function_signature": "0x",
+              "function_name": "0x",
+              "arguments": [],
+              "outputs": [],
+              "gas_used": 83,
+              "error": "None",
+              "status": "True",
+              "indent": 2,
+              "subcalls": [],
+              "function_guessed": "False",
+              "comment": "None"
+            }
+          ],
+          "function_guessed": "False",
+          "comment": "None"
+        },
+        {
+          "chain_id": "mainnet",
+          "timestamp": "datetime.datetime(2022,2,19,8,41,38)",
+          "tx_hash": "0x2b38b28563469943dfa93b49f351c137e898177cf03968690c94e7cb1e51f4c4",
+          "call_id": "4",
+          "call_type": "call",
+          "from_address": {
+            "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+            "name": "UniswapV2Router02",
+            "badge": "receiver"
+          },
+          "to_address": {
+            "address": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+            "name": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+            "badge": "sender"
+          },
+          "value": 0.10033554134718232,
+          "function_signature": "0x",
+          "function_name": "fallback",
+          "arguments": [],
+          "outputs": [],
+          "gas_used": "None",
+          "error": "None",
+          "status": "True",
+          "indent": 1,
+          "subcalls": [],
+          "function_guessed": "False",
+          "comment": "None"
+        }
+      ],
+      "function_guessed": "False",
+      "comment": "None"
+    },
+    "transfers": [
+      {
+        "from_address": {
+          "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "name": "WETH9",
+          "badge": "None"
+        },
+        "to_address": {
+          "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+          "name": "UniswapV2Router02",
+          "badge": "receiver"
+        },
+        "token_address": "0x0000000000000000000000000000000000000000",
+        "token_symbol": "ETH",
+        "token_standard": "ETH",
+        "value": "0.1003"
+      },
+      {
+        "from_address": {
+          "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+          "name": "UniswapV2Router02",
+          "badge": "receiver"
+        },
+        "to_address": {
+          "address": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+          "name": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+          "badge": "sender"
+        },
+        "token_address": "0x0000000000000000000000000000000000000000",
+        "token_symbol": "ETH",
+        "token_standard": "ETH",
+        "value": "0.1003"
+      },
+      {
+        "from_address": {
+          "address": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+          "name": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+          "badge": "sender"
+        },
+        "to_address": {
+          "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+          "name": "UniswapV2Pair",
+          "badge": "None"
+        },
+        "token_address": "0xf293d23bf2cdc05411ca0eddd588eb1977e8dcd4",
+        "token_symbol": "SyloToken",
+        "token_standard": "ERC20",
+        "value": "54,650.0000"
+      },
+      {
+        "from_address": {
+          "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+          "name": "UniswapV2Pair",
+          "badge": "None"
+        },
+        "to_address": {
+          "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+          "name": "UniswapV2Router02",
+          "badge": "receiver"
+        },
+        "token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "token_symbol": "WETH9",
+        "token_standard": "ERC20",
+        "value": "0.1003"
+      }
+    ],
+    "balances": [
+      {
+        "holder": {
+          "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "name": "WETH9",
+          "badge": "None"
+        },
+        "tokens": [
+          {
+            "token_address": "0x0000000000000000000000000000000000000000",
+            "token_symbol": "ETH",
+            "token_standard": "ETH",
+            "balance": "-0.1003"
+          }
+        ]
+      },
+      {
+        "holder": {
+          "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+          "name": "UniswapV2Router02",
+          "badge": "receiver"
+        },
+        "tokens": [
+          {
+            "token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+            "token_symbol": "WETH9",
+            "token_standard": "ERC20",
+            "balance": "0.1003"
+          }
+        ]
+      },
+      {
+        "holder": {
+          "address": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+          "name": "0x27c656f5027a82296950289762343ef01bdfa2d9",
+          "badge": "sender"
+        },
+        "tokens": [
+          {
+            "token_address": "0x0000000000000000000000000000000000000000",
+            "token_symbol": "ETH",
+            "token_standard": "ETH",
+            "balance": "0.1003"
+          },
+          {
+            "token_address": "0xf293d23bf2cdc05411ca0eddd588eb1977e8dcd4",
+            "token_symbol": "SyloToken",
+            "token_standard": "ERC20",
+            "balance": "-54,650.0000"
+          }
+        ]
+      },
+      {
+        "holder": {
+          "address": "0x2a66392317698c5818df7a72a58556049f0ae6f2",
+          "name": "UniswapV2Pair",
+          "badge": "None"
+        },
+        "tokens": [
+          {
+            "token_address": "0xf293d23bf2cdc05411ca0eddd588eb1977e8dcd4",
+            "token_symbol": "SyloToken",
+            "token_standard": "ERC20",
+            "balance": "54,650.0000"
+          },
+          {
+            "token_address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+            "token_symbol": "WETH9",
+            "token_standard": "ERC20",
+            "balance": "-0.1003"
+          }
+        ]
+      }
+    ],
+    "status": "True"
+  }
+]
