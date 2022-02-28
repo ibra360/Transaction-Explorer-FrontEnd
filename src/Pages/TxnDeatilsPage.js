@@ -18,11 +18,10 @@ export default function TxnDetailsPage() {
           href={`https://${
             chainId != "mainnet" ? `${chainId}.` : ""
           }etherscan.io/address/${address}`}
-          // href={`https://etherscan.io/address/${address}`}
           target="_blank"
         >
           {badge !== "None" && <span>[{badge}] </span>}
-          {label}
+          <span>{label}</span>
         </a>
       );
     } else {
@@ -51,7 +50,7 @@ export default function TxnDetailsPage() {
     let arr = [];
     arg.forEach(function (argument, index) {
       if (argument.type != "ignore") {
-        if (index > 1) {
+        if (index > 0) {
           arr.push(<span>,</span>);
         }
         if (argument.name == "[no ABI]") {
@@ -111,11 +110,11 @@ export default function TxnDetailsPage() {
 
   const printCallArguments = (argu) => {
     let arr = [];
-    if (argu != "None") {
+    if (argu.length > 0) {
       console.log({ argu });
       argu.forEach(function (argument, index) {
         if (argument.type != "ignore") {
-          if (index > 1) {
+          if (index > 0) {
             arr.push(<span>,</span>);
           }
           if (argument.name == "[no ABI]") {
@@ -127,16 +126,16 @@ export default function TxnDetailsPage() {
               );
             }
             if (argument.type == "tuple") {
-              printCallArguments(argument.value);
+              <>{printCallArguments(argument.value)};</>;
             } else if (argument.type == "tuple[]") {
               arr.push(
                 <span>
                   [
                   {argument.value.map((value, index) => {
-                    return index > 1 ? (
+                    return index > 0 ? (
                       <span>,{printCallArguments(value)}</span>
                     ) : (
-                      printCallArguments(value)
+                      <span>{printCallArguments(value)}</span>
                     );
                   })}
                   ]
@@ -152,6 +151,20 @@ export default function TxnDetailsPage() {
                     "mainnet"
                   )}
                 </span>
+              );
+            } else if (argument.type == "address[]") {
+              arr.push(
+                <>
+                  [
+                  {argument.value.map((value, index) => {
+                    if (index > 0) {
+                      return <span>,&nbsp;{value}</span>;
+                    }
+
+                    return <span>{value}</span>;
+                  })}
+                  ]
+                </>
               );
             } else if (argument.type == "nft") {
               nft_link(argument.value.address, argument.value.name, "mainnet");
@@ -189,7 +202,7 @@ export default function TxnDetailsPage() {
       let main = [];
       paragraph.push(
         <span style={{ color: "slategray" }}>
-          [{call.gas_used != "None" ? call.gas_used : "N/A"}-]{" "}
+          [{call.gas_used != "None" ? call.gas_used : "N/A"}]:{" "}
         </span>
       );
       if (call.error != "None") {
@@ -256,12 +269,14 @@ export default function TxnDetailsPage() {
           );
         } else {
           paragraph.push(
-            addressLinkFunc(
-              call.to_address.address,
-              call.to_address.name,
-              call.to_address.badge,
-              "mainnet"
-            )
+            <>
+              {addressLinkFunc(
+                call.to_address.address,
+                call.to_address.name,
+                call.to_address.badge,
+                "mainnet"
+              )}
+            </>
           );
         }
         if (call.call_type == "delegatecall") {
@@ -280,7 +295,7 @@ export default function TxnDetailsPage() {
             </>
           );
         }
-        if (call.function_guessed != "None") {
+        if (call.function_guessed != "False") {
           paragraph.push(
             <span style={{ color: "dodgerblue" }}>.{call.function_name}</span>
           );
@@ -388,7 +403,15 @@ export default function TxnDetailsPage() {
                       eve.chain_id
                     )}
                   </span>
-                  <span>.{eve.event_name}</span>
+                  {eve.event_guessed !="False"? (
+                    <span style={{ color: "dodgerblue" }}>
+                      .{eve.event_name}
+                    </span>
+                  ) : (
+                    <span style={{ color: "darkgreen" }}>
+                      .{eve.event_name}
+                    </span>
+                  )}
                   <span>({printEventArgument(eve.parameters)})</span>
                 </td>
               </tr>
