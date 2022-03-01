@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Data from "../Assets/DummyData.json";
 import { Tree } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { DownOutlined, MinusOutlined } from "@ant-design/icons";
 import { v4 as uuid } from "uuid";
 export default function TxnDetailsPage() {
   const [transaction, setTransaction] = useState({});
@@ -57,7 +57,7 @@ export default function TxnDetailsPage() {
     arg.forEach(function (argument, index) {
       if (argument.type != "ignore") {
         if (index > 0) {
-          arr.push(<span>,</span>);
+          arr.push(<span>,&nbsp;</span>);
         }
         if (argument.name == "[no ABI]") {
           arr.push(<span className="badge badge-danger">no_ABI</span>);
@@ -121,7 +121,7 @@ export default function TxnDetailsPage() {
       argu.forEach(function (argument, index) {
         if (argument.type != "ignore") {
           if (index > 0) {
-            arr.push(<span>,</span>);
+            arr.push(<span>,&nbsp;</span>);
           }
           if (argument.name == "[no ABI]") {
             arr.push(<span className="badge badge-danger">no_ABI</span>);
@@ -139,7 +139,7 @@ export default function TxnDetailsPage() {
                   [
                   {argument.value.map((value, index) => {
                     return index > 0 ? (
-                      <span>,{printCallArguments(value)}</span>
+                      <span>,&nbsp;{printCallArguments(value)}</span>
                     ) : (
                       <span>{printCallArguments(value)}</span>
                     );
@@ -329,7 +329,7 @@ export default function TxnDetailsPage() {
       childTree.push({
         title: paragraph,
         key: unique_id,
-        icon: <DownOutlined />,
+        icon: <MinusOutlined />,
         parentId: call.indent != 0 ? indentation[call.indent - 1] : null,
       });
       call.subcalls.forEach((sub_call) => {
@@ -445,7 +445,7 @@ export default function TxnDetailsPage() {
           flag = true;
         }
       });
-      console.log({root});
+      console.log({ root });
       if (flag) {
         setChildTreeState([{ ...root }]);
       }
@@ -633,12 +633,9 @@ export default function TxnDetailsPage() {
               {childTreeState.length > 0 && (
                 <>
                   <Tree
-                    // icon={<span>H</span>}
-                    showIcon
-                    showLine={true}
-                    switcherIcon={<DownOutlined />}
                     treeData={[
                       {
+                        icon: <MinusOutlined />,
                         key: uuid(),
                         title: (
                           <>

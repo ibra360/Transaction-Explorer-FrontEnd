@@ -1,15 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: monospace !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px !important;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace; */
 }
 /*
  * Copyright 2021 DAI Foundation
@@ -27,8 +26,20 @@ code {
 .ant-tree-switcher-noop {
   display: none;
 }
-.ant-tree-node-content-wrapper-open .ant-tree-iconEle{
-  display: none;
+.anticon .anticon-minus {
+  margin-bottom: 10px !important;
+}
+.ant-tree-iconEle {
+  display: flex;
+  text-align: none !important;
+  justify-content: center;
+  align-items: center;
+}
+.ant-tree-node-content-wrapper-close > .ant-tree-iconEle {
+  display: none !important;
+}
+.ant-tree-node-content-wrapper-open > .ant-tree-iconEle {
+  display: none !important;
 }
 body {
   font-family: monospace;
@@ -48,6 +59,13 @@ h3 {
 
 p {
   padding-bottom: 50px;
+}
+
+.ant-tree-node-content-wrapper {
+  border: 1px #ccc solid;
+  padding: 2px 5px !important;
+  padding-right: 8px !important;
+  margin: 2px auto !important;
 }
 
 .my_p {
