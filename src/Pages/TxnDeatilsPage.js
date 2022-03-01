@@ -337,6 +337,93 @@ export default function TxnDetailsPage() {
     }
   };
 
+  function EmittedEventsFunc() {
+    const mappedTxns = transaction?.events?.map((eve) => {
+      return (
+        <tr>
+          <td style={{ border: "1px solid #cccccc", padding: "5px 10px" }}>
+            <span style={{ color: "slategray" }}>[{eve.index}]</span>{" "}
+            <span>
+              {addressLinkFunc(
+                eve.contract.address,
+                eve.contract.name,
+                eve.contract.badge,
+                eve.chain_id
+              )}
+            </span>
+            {eve.event_guessed != "False" ? (
+              <span style={{ color: "dodgerblue" }}>.{eve.event_name}</span>
+            ) : (
+              <span style={{ color: "darkgreen" }}>.{eve.event_name}</span>
+            )}
+            <span>({printEventArgument(eve.parameters)})</span>
+          </td>
+        </tr>
+      );
+    });
+    return mappedTxns;
+  }
+
+  function AccountBalanceFunc() {
+    const mappedBalance = transaction?.balances?.map((bal) => {
+      return (
+        <tr style={{ border: "1px solid #cccccc", padding: "5px 10px" }}>
+          <td style={{ border: "1px solid #cccccc", padding: "5px 10px" }}>
+            {addressLinkFunc(
+              bal.holder.address,
+              bal.holder.name,
+              bal.holder.badge,
+              "mainnet"
+            )}
+          </td>
+          {bal.tokens.map((tok) => {
+            return (
+              <tr>
+                {tok.token_standard == "ERC721" ? (
+                  <td>
+                    {addressLinkFunc(
+                      tok.token_address,
+                      tok.token_symbol,
+                      "None",
+                      "mainnet"
+                    )}
+                  </td>
+                ) : (
+                  <td
+                    style={{
+                      border: "1px solid #cccccc",
+                      padding: "5px 10px",
+                    }}
+                  >
+                    {addressLinkFunc(
+                      tok.token_address,
+                      tok.token_symbol,
+                      "None",
+                      "mainnet"
+                    )}
+                  </td>
+                )}
+                <td
+                  style={{
+                    border: "1px solid #cccccc",
+                    padding: "5px 10px",
+                  }}
+                >
+                  {parseFloat(tok.balance) < 0 ? (
+                    <span style={{ color: "darkred" }}>{tok.balance}</span>
+                  ) : (
+                    <span>{tok.balance}</span>
+                  )}
+                </td>
+              </tr>
+            );
+          })}
+        </tr>
+      );
+    });
+    return mappedBalance;
+  }
+
   return (
     <div>
       <p style={{ fontWeight: "bold", color: "green" }}>
@@ -389,150 +476,63 @@ export default function TxnDetailsPage() {
 
       <div>
         <h3 style={{ margin: "20px 0px 10px 0px" }}>Emitted events:</h3>
-        <table>
-          {transaction?.events?.map((eve) => {
-            return (
-              <tr>
-                <td style={{ border: "1px solid grey", padding: "5px 10px" }}>
-                  <span style={{ color: "slategray" }}>[{eve.index}]</span>{" "}
-                  <span>
-                    {addressLinkFunc(
-                      eve.contract.address,
-                      eve.contract.name,
-                      eve.contract.badge,
-                      eve.chain_id
-                    )}
-                  </span>
-                  {eve.event_guessed !="False"? (
-                    <span style={{ color: "dodgerblue" }}>
-                      .{eve.event_name}
-                    </span>
-                  ) : (
-                    <span style={{ color: "darkgreen" }}>
-                      .{eve.event_name}
-                    </span>
-                  )}
-                  <span>({printEventArgument(eve.parameters)})</span>
-                </td>
-              </tr>
-            );
-          })}
-        </table>
+        <table>{EmittedEventsFunc()}</table>
       </div>
 
       <div>
         <h3 style={{ margin: "20px 0px 10px 0px" }}>Account balances:</h3>
-        <table style={{ border: "1px solid grey", padding: "5px 10px" }}>
+        <table style={{ border: "1px solid #cccccc", padding: "5px 10px" }}>
           <thead style={{ backgroundColor: "#DDDDDD" }}>
             <tr>
               <th
-                style={{ border: "1px solid grey", padding: "5px 10px" }}
+                style={{ border: "1px solid #cccccc", padding: "5px 10px" }}
                 scope="col"
               >
                 Address
               </th>
               <th
-                style={{ border: "1px solid grey", padding: "5px 10px" }}
+                style={{ border: "1px solid #cccccc", padding: "5px 10px" }}
                 scope="col"
               >
                 Token
               </th>
               <th
-                style={{ border: "1px solid grey", padding: "5px 10px" }}
+                style={{ border: "1px solid #cccccc", padding: "5px 10px" }}
                 scope="col"
               >
                 Balance
               </th>
             </tr>
           </thead>
-          <tbody>
-            {transaction?.balances?.map((bal) => {
-              return (
-                <tr style={{ border: "1px solid grey", padding: "5px 10px" }}>
-                  <td style={{ border: "1px solid grey", padding: "5px 10px" }}>
-                    {addressLinkFunc(
-                      bal.holder.address,
-                      bal.holder.name,
-                      bal.holder.badge,
-                      "mainnet"
-                    )}
-                  </td>
-                  {bal.tokens.map((tok) => {
-                    return (
-                      <tr>
-                        {tok.token_standard == "ERC721" ? (
-                          <td>
-                            {addressLinkFunc(
-                              tok.token_address,
-                              tok.token_symbol,
-                              "None",
-                              "mainnet"
-                            )}
-                          </td>
-                        ) : (
-                          <td
-                            style={{
-                              border: "1px solid grey",
-                              padding: "5px 10px",
-                            }}
-                          >
-                            {addressLinkFunc(
-                              tok.token_address,
-                              tok.token_symbol,
-                              "None",
-                              "mainnet"
-                            )}
-                          </td>
-                        )}
-                        <td
-                          style={{
-                            border: "1px solid grey",
-                            padding: "5px 10px",
-                          }}
-                        >
-                          {parseFloat(tok.balance) < 0 ? (
-                            <span style={{ color: "darkred" }}>
-                              {tok.balance}
-                            </span>
-                          ) : (
-                            <span>{tok.balance}</span>
-                          )}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tr>
-              );
-            })}
-          </tbody>
+          <tbody>{AccountBalanceFunc()}</tbody>
         </table>
       </div>
 
       <div>
         <h3 style={{ margin: "20px 0px 10px 0px" }}>Token transfers:</h3>
-        <table style={{ border: "1px solid grey", padding: "5px 10px" }}>
+        <table style={{ border: "1px solid #cccccc", padding: "5px 10px" }}>
           <thead style={{ backgroundColor: "#DDDDDD" }}>
             <tr>
               <th
-                style={{ border: "1px solid grey", padding: "5px 10px" }}
+                style={{ border: "1px solid #cccccc", padding: "5px 10px" }}
                 scope="col"
               >
                 Sender
               </th>
               <th
-                style={{ border: "1px solid grey", padding: "5px 10px" }}
+                style={{ border: "1px solid #cccccc", padding: "5px 10px" }}
                 scope="col"
               >
                 Token
               </th>
               <th
-                style={{ border: "1px solid grey", padding: "5px 10px" }}
+                style={{ border: "1px solid #cccccc", padding: "5px 10px" }}
                 scope="col"
               >
                 Amount
               </th>
               <th
-                style={{ border: "1px solid grey", padding: "5px 10px" }}
+                style={{ border: "1px solid #cccccc", padding: "5px 10px" }}
                 scope="col"
               >
                 Reciever
@@ -542,8 +542,12 @@ export default function TxnDetailsPage() {
           <tbody>
             {transaction?.transfers?.map((transf) => {
               return (
-                <tr style={{ border: "1px solid grey", padding: "5px 10px" }}>
-                  <td style={{ border: "1px solid grey", padding: "5px 10px" }}>
+                <tr
+                  style={{ border: "1px solid #cccccc", padding: "5px 10px" }}
+                >
+                  <td
+                    style={{ border: "1px solid #cccccc", padding: "5px 10px" }}
+                  >
                     {addressLinkFunc(
                       transf.from_address.address,
                       transf.from_address.name,
@@ -570,10 +574,14 @@ export default function TxnDetailsPage() {
                       )}
                     </td>
                   )}
-                  <td style={{ border: "1px solid grey", padding: "5px 10px" }}>
+                  <td
+                    style={{ border: "1px solid #cccccc", padding: "5px 10px" }}
+                  >
                     {transf.value}
                   </td>
-                  <td style={{ border: "1px solid grey", padding: "5px 10px" }}>
+                  <td
+                    style={{ border: "1px solid #cccccc", padding: "5px 10px" }}
+                  >
                     {addressLinkFunc(
                       transf.to_address.address,
                       transf.to_address.name,
