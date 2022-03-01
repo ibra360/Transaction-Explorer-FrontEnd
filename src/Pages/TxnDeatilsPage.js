@@ -633,6 +633,7 @@ export default function TxnDetailsPage() {
               {childTreeState.length > 0 && (
                 <>
                   <Tree
+                    selectable={false}
                     treeData={[
                       {
                         icon: <MinusOutlined />,
