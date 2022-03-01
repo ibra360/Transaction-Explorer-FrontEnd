@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Data from "../Assets/DummyData.json";
-import Axios from "axios";
+import { Tree } from "antd";
+import { DownOutlined } from "@ant-design/icons";
+import { v4 as uuid } from "uuid";
 export default function TxnDetailsPage() {
   const [transaction, setTransaction] = useState({});
+  const [childTreeState, setChildTreeState] = useState([]);
 
   useEffect(() => {
-    console.log("DATA FROM JSON===", Data);
     setTransaction(Data[0]);
   }, [Data]);
+
+  useEffect(() => {
+    setChildTreeStructure(transaction.calls);
+  }, [transaction]);
 
   const addressLinkFunc = (address, label, badge, chainId) => {
     if (address && address != "0x0000000000000000000000000000000000000000") {
@@ -191,10 +197,12 @@ export default function TxnDetailsPage() {
         }
       });
     }
-    console.log("%cTxnDeatilsPage.js line:179 arr", "color: #007acc;", arr);
+
     return arr;
   };
 
+  var childTree = [];
+  var indentation = {};
   const printCallLine = (call) => {
     if (call) {
       console.log({ call });
@@ -309,7 +317,6 @@ export default function TxnDetailsPage() {
         if (call.call_type == "delegatecall") {
           paragraph.push(<>]</>);
         }
-        console.log("call.output", call.outputs);
         paragraph.push(
           <span>
             ({printCallArguments(call.arguments)}) {"=>"} (
@@ -317,26 +324,44 @@ export default function TxnDetailsPage() {
           </span>
         );
       }
-
-      main.push(
-        <li
-          id={call.id}
-          className={`indent-${call.indent} ${call.indent < 6 && "expanded"}`}
-        >
-          {paragraph}
-          <ul>
-            {console.log("subcallsss", call.subcalls)}
-            {call.subcalls.map((sub_call) => {
-              return printCallLine(sub_call);
-            })}
-          </ul>
-        </li>
-      );
-
-      return main;
+      const unique_id = uuid();
+      indentation = { ...indentation, [call.indent]: unique_id };
+      childTree.push({
+        title: paragraph,
+        key: unique_id,
+        parentId: call.indent != 0 ? indentation[call.indent - 1] : null,
+      });
+      call.subcalls.forEach((sub_call) => {
+        printCallLine(sub_call);
+      });
     }
   };
 
+  const setChildTreeStructure = (calls) => {
+    printCallLine(calls);
+    if (childTree.length > 0) {
+      const idMapping = childTree.reduce((acc, el, i) => {
+        acc[el.key] = i;
+        return acc;
+      }, {});
+      let root,
+        flag = false;
+      childTree.forEach((el, index) => {
+        if (el.parentId == null) {
+          root = el;
+          return;
+        }
+        const parentEl = childTree[idMapping[el.parentId]];
+        parentEl.children = [...(parentEl?.children || []), el];
+        if (index == childTree?.length - 1) {
+          flag = true;
+        }
+      });
+      if (flag) {
+        setChildTreeState([{ ...root }]);
+      }
+    }
+  };
   return (
     <div>
       <p style={{ fontWeight: "bold", color: "green" }}>
@@ -403,7 +428,7 @@ export default function TxnDetailsPage() {
                       eve.chain_id
                     )}
                   </span>
-                  {eve.event_guessed !="False"? (
+                  {eve.event_guessed != "False" ? (
                     <span style={{ color: "dodgerblue" }}>
                       .{eve.event_name}
                     </span>
@@ -590,23 +615,38 @@ export default function TxnDetailsPage() {
 
       {transaction.calls ? (
         <div className="calls">
-          <h3>Execution trace:</h3>
+          <h3 style={{ marginTop: "30px", marginBottom: "22px" }}>
+            Execution trace:
+          </h3>
           <div id="tree">
             <ul className="tree">
-              <li>
-                <p>
-                  <span style={{ color: "slategray" }}>
-                    [{transaction.metadata.gas_used}]:{" "}
-                  </span>
-                  {addressLinkFunc(
-                    transaction.metadata.sender?.address,
-                    transaction.metadata.sender?.name,
-                    "sender",
-                    "mainnet"
-                  )}
-                </p>
-                <ul>{printCallLine(transaction.calls)}</ul>
-              </li>
+              {childTreeState.length > 0 && (
+                <>
+                  <Tree
+                    showLine
+                    switcherIcon={<DownOutlined />}
+                    treeData={[
+                      {
+                        key: uuid(),
+                        title: (
+                          <>
+                            <span style={{ color: "slategray" }}>
+                              [{transaction.metadata.gas_used}]:{" "}
+                            </span>
+                            {addressLinkFunc(
+                              transaction.metadata.sender?.address,
+                              transaction.metadata.sender?.name,
+                              "sender",
+                              "mainnet"
+                            )}
+                          </>
+                        ),
+                      },
+                      { ...childTreeState[0] },
+                    ]}
+                  />
+                </>
+              )}
             </ul>
           </div>
         </div>
