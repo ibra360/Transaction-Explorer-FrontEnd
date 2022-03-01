@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import Layout from "./Pages/Layout";
-
+import "antd/dist/antd.css";
 import TxnDetailsPage from "./Pages/TxnDeatilsPage";
 
 function App() {
