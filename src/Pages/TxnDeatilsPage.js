@@ -329,6 +329,7 @@ export default function TxnDetailsPage() {
       childTree.push({
         title: paragraph,
         key: unique_id,
+        icon: <DownOutlined />,
         parentId: call.indent != 0 ? indentation[call.indent - 1] : null,
       });
       call.subcalls.forEach((sub_call) => {
@@ -444,6 +445,7 @@ export default function TxnDetailsPage() {
           flag = true;
         }
       });
+      console.log({root});
       if (flag) {
         setChildTreeState([{ ...root }]);
       }
@@ -631,7 +633,9 @@ export default function TxnDetailsPage() {
               {childTreeState.length > 0 && (
                 <>
                   <Tree
-                    showLine
+                    // icon={<span>H</span>}
+                    showIcon
+                    showLine={true}
                     switcherIcon={<DownOutlined />}
                     treeData={[
                       {

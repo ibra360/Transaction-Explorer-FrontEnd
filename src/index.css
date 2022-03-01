@@ -24,7 +24,12 @@ code {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+.ant-tree-switcher-noop {
+  display: none;
+}
+.ant-tree-node-content-wrapper-open .ant-tree-iconEle{
+  display: none;
+}
 body {
   font-family: monospace;
   margin: 5px;
