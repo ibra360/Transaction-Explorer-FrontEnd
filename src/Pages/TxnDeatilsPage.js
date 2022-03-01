@@ -638,7 +638,7 @@ export default function TxnDetailsPage() {
                         icon: <MinusOutlined />,
                         key: uuid(),
                         title: (
-                          <>
+                          <div>
                             <span style={{ color: "slategray" }}>
                               [{transaction.metadata.gas_used}]:{" "}
                             </span>
@@ -648,7 +648,7 @@ export default function TxnDetailsPage() {
                               "sender",
                               "mainnet"
                             )}
-                          </>
+                          </div>
                         ),
                       },
                       { ...childTreeState[0] },

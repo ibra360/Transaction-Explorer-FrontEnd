@@ -66,8 +66,14 @@ p {
   padding: 2px 5px !important;
   padding-right: 8px !important;
   margin: 2px auto !important;
+  /* margin-left: 30px !important; */
 }
-
+.ant-tree-node-content-wrapper-normal {
+  margin-left: 23.8px !important;
+}
+.ant-tree-list-holder-inner > :first-child {
+  margin-left: -23.8px !important;
+}
 .my_p {
   margin: 2px 2px 2px 11px;
   border: 1px #ccc solid;
